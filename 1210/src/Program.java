@@ -1,24 +1,27 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 
 public class Program {
 
-	public static void main(String[] args) throws FileNotFoundException {
-		
+	public static void main(String[] args) throws IOException {
+
 		LottoArray lottoArray = new LottoArray();
 		int[] lotto = null;
-		lotto = lottoArray.array(lotto);
-		lottoArray.arrayBubbleSort(lotto);
 		
+		lotto = lottoArray.array(lotto);
+		
+		lottoArray.arrayBubbleSort(lotto);
+
 		System.out.println(Arrays.toString(lotto));
 		
-		File file = new File("C:\\Test.txt");
+		FileWriter fw = new FileWriter("result.txt",true);
 		
-		if(file.exists()) {
-			FileOutputStream outputStream = new FileOutputStream(file);
-			
-		}
+		fw.write(Arrays.toString(lotto));
+		
+		fw.flush();
+		
+		fw.close();
+		
 	}
 }

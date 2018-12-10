@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class LottoArray {
 	public int[] array(int[] arr) {
 		arr = new int[6];
@@ -7,7 +5,7 @@ public class LottoArray {
 			arr[i] =  (int) ((Math.random() * 45) +1);
 			for(int j = 0; j < i; j++) {
 				if(arr[i] == arr[j]) {
-					System.out.println("Áßº¹, ´Ù½Ã »Ì½À´Ï´Ù.");
+					System.out.println("ì¤‘ë³µ ë°œìƒ");
 					i--;
 				}
 			}
@@ -27,32 +25,5 @@ public class LottoArray {
 			}
 		}
 		return arr;
-	}
-
-	public static void main(String[] args) {
-		int[] arr = new int[6];
-
-		for(int i = 0; i < arr.length; i++) {	
-			arr[i] =  (int) ((Math.random() * 45) +1);
-			for(int j = 0; j < i; j++) {
-				if(arr[i] == arr[j]) {
-					System.out.println("Áßº¹, ´Ù½Ã »Ì½À´Ï´Ù.");
-					i--;
-				}
-			}
-		}
-		
-		int temp;
-		for(int i = arr.length; i>0; i--) {
-			for(int j=0; j < i-1; j++) {
-				if(arr[j] > arr[j+1]) {
-					temp = arr[j];
-					arr[j] = arr[j+1];
-					arr[j+1] = temp;
-				}
-			}
-		}
-
-		System.out.println(Arrays.toString(arr));	
 	}
 }
