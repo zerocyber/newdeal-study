@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Portfolio INFO</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+@font-face {
+	font-family: NanumPen;
+	src: url(/font/NanumPen.ttf) format('truetype')
+}
+
+@font-face {
+	font-family: NanumGothicExtraBold;
+	src: url(/font/NanumGothicExtraBold.ttf) format('truetype')
+}
+
+@font-face {
+	font-family: InterparkGothicBold;
+	src: url(/font/InterparkGothicBold.ttf) format('truetype')
+}
+
+</style>
+
+<body>
+
+
+	<div class="jumbotron text-center" style="background-color: coral;">
+		<h1 style="font-family: NanumGothicExtraBold">Show Me My Movie</h1>
+		<p style="font-family: NanumPen; size: 28px; font-weight: bold;">Machine
+			Learning을 활용한 영화 추천</p>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<img width="350px" height="250px" src="/images/item-recommend.JPG">
+				<p class="text-center"
+					style="font-family: NanumPen; font-size: 16pt; font-weight: bold;">협업필터링
+					알고리즘 사용</p>
+				<p style="font-family: NanumGothicExtraBold; font-weight: bold">
+					■ Item-Based Recommendation</p>
+				<p style="font-family: NanumGothicExtraBold; font-weight: bold">
+					■ 리뷰 사진 클릭시 추천 영화 정보가 나타납니다.</p>
+			</div>
+			<div class="col-sm-4">
+				<img width="350px" height="250px" src="/images/node-crawling.JPG">
+				<p class="text-center"
+					style="font-family: NanumPen; font-size: 16pt; font-weight: bold;">Node.js
+					기반 Web Crawling</p>
+				<p style="font-family: NanumGothicExtraBold; font-weight: bold">■
+					Daum 기준 실시간 박스오피스 데이터를 조회합니다.</p>
+				<p style="font-family: NanumGothicExtraBold; font-weight: bold">■
+					하루에 한번씩 갱신합니다.</p>
+			</div>
+			<div class="col-sm-4">
+				<img width="350px" height="250px" src="/images/imgboard.JPG">
+				<p class="text-center"
+					style="font-family: NanumPen; font-size: 16pt; font-weight: bold;">Drag
+					and Drop 방식의 업로드</p>
+				<p style="font-family: NanumGothicExtraBold; font-weight: bold">■
+					사용자들이 업로드한 이미지 게시판</p>
+				<p style="font-family: NanumGothicExtraBold; font-weight: bold">■
+					직접 드래그 해서 사진을 올려놓을 수 있습니다.</p>
+			</div>
+		</div>
+
+		<div class="row" style="padding-top: 40px; font-family: InterparkGothicBold;">
+			<table class="table table-striped table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th style="text-align: center;">제목</th>
+						<th>작성자</th>
+						<th>작성일</th>
+						<th>조회수</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>4</td>
+						<td>커피 잘마시겠습니다!</td>
+						<td>Illaoi</td>
+						<td>2018.12.11</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>라이브러리 뭐 사용하셨나요?</td>
+						<td>student</td>
+						<td>2018.12.11</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>잘봤습니다.</td>
+						<td>zero</td>
+						<td>2018.12.11</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>게시판 이용 수칙 안내(필독)</td>
+						<td>관리자</td>
+						<td>2018.12.11</td>
+						<td>10</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="text-center">
+				<ul class="pagination">
+					<li><a>1</a></li>
+					<li><a>2</a></li>
+					<li><a>3</a></li>
+					<li><a>4</a></li>
+				</ul>
+				<a class="btn btn-info pull-right">글쓰기</a>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

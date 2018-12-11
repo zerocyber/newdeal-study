@@ -1,6 +1,11 @@
 public class LottoArray {
+	private int[] arr;
+
+	public LottoArray() {
+		this.arr = new int[6];
+	}
+
 	public int[] array(int[] arr) {
-		arr = new int[6];
 		for(int i = 0; i < arr.length; i++) {	
 			arr[i] =  (int) ((Math.random() * 45) +1);
 			for(int j = 0; j < i; j++) {
