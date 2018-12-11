@@ -2,7 +2,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class BubbleSort {
-
 	private Scanner keyboard;
 	
 	public BubbleSort() {
