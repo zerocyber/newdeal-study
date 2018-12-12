@@ -9,7 +9,6 @@ public class BubbleSort {
 	}
 
 	public void sort() {
-
 		int size = Integer.parseInt(this.keyboard.next());
 		int[] arr = null;
 		
@@ -37,7 +36,6 @@ public class BubbleSort {
 				}
 			}
 		}
-		
 
 		//버블 정렬
 		for(int i=arr.length; i > 0; i--) {
@@ -52,19 +50,14 @@ public class BubbleSort {
 		}
 		//최종 결과값 출력
 		System.out.println(Arrays.toString(arr));
-		
 		for(int i=0; i < arr.length; i++) {
 			System.out.println(arr[i]);
 		}
 	}
 
 	public static void main(String[] args) {
-		
 		System.out.println("배열의 크기를 입력해주세요");
-		
 		BubbleSort bubbleSort = new BubbleSort();
-		
 		bubbleSort.sort();
-
 	}
 }
