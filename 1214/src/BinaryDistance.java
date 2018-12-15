@@ -4,39 +4,37 @@ import java.util.List;
 
 public class BinaryDistance {
 
-	public int soulution(int num) {
-		List<Integer> list = new ArrayList<>();
+  public int soulution(int num) {
+    List<Integer> list = new ArrayList<>();
 
-		int temp = num;
+    int temp = 0;
 
-		int result = list.size();
-		System.out.println("result : " + result);
-		
-		Collections.reverse(list); //순서 뒤집기
-		
-		System.out.println("list : " + list.toString());
-		
-		
-		return result;
-	}
+    while( num > 0) {
+      System.out.println("----"+num+"----"); 
+      temp = num % 2;
+      list.add(temp);
+      System.out.println("나머지: " + temp);
+      num = num /2;
+      System.out.println("몫: " + num);
+    }
 
-	public static void main(String[] args) {
-/*
-		BinaryDistance bd = new BinaryDistance();
+    System.out.printf("num : %d , temp : %d\n", num, temp);
 
-		System.out.println("리스트의 크기: " + bd.soulution(10));*/
-		
-		int num = 10; //나눌 대상
-		int temp = 1; //나눈 나머지
+    int result = list.size();
+    System.out.println("리스트 안의 갯수 : " + result);
+    System.out.println("list : " + list.toString());
 
-		while( temp == 0) {
-			System.out.println(".....");
-			temp = num % 2;
-			num = num /2;
-			
-		}
-		
-		
-		System.out.printf("num : %d , temp : %d\n", num, temp);
-	}
+    Collections.reverse(list); //순서 뒤집기
+
+    System.out.println("list : " + list.toString());
+
+
+    return result;
+  }
+
+  public static void main(String[] args) {
+    BinaryDistance bd = new BinaryDistance();
+
+    bd.soulution(25);
+  }
 }
