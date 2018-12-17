@@ -11,7 +11,7 @@ public class StairGame {
 		int stair = sc.nextInt();
 		while(user < stair && com < stair) {
 			System.out.println("가위/바위/보 중 하나를 입력해주세요");
-			String userInput = sc.nextLine(); //유저 입력값
+			String userInput = sc.next(); //유저 입력값
 			String comInput = arr[(int)(Math.random() * 3)]; //컴퓨터 입력값
 			System.out.println("userInput : " + userInput);
 			System.out.printf("당신 - %s          COM - %s\n", userInput, comInput);
