@@ -104,7 +104,7 @@ public class BMICheck {
 			
 			map = (HashMap)oos.readObject();
 			
-			Set<Integer> set = map.keySet();
+			Set<Integer> set = map.keySet(); //순서가 없는 key 집합 -> keySet의 리턴타입은 Set
 			System.out.println("번호\t키\t몸무게\t결과\t판정");
 			for (Integer number : set) {
 				double length = map.get(number).getLength();
