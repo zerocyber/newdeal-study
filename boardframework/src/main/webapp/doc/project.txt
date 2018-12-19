@@ -1,0 +1,75 @@
+pj : boardframework
+     - src
+         - com.bit.board.admin.controller
+         	BoardAdminController.java
+         
+         - com.bit.board.admin.dao
+         	BoardADminDao.java(I)
+         
+         - com.bit.board.admin.service
+         	BoardAdminService.java(I)
+         	BoardADminServiceImpl.java
+         
+         - com.bit.board.admin.model
+         	BoardTypeDto.java
+         	CategoryDto.java
+         	BoardListDto.java
+         
+         - com.bit.board.controller
+         	AlbumController.java
+         	BbsController.java
+         	BoardController.java
+         	ReboardController.java
+         	MemoController.java
+         
+         - com.bit.board.dao
+         	AlbumDao.java(I)
+         	BbsDao.java(I)
+         	BoardDao.java(I)
+         	ReboardDao.java(I)
+         	MemoDao.java(I)
+         
+         - com.bit.board.service
+            Albumservice.java(I)
+            AlbumserviceImpl.java
+         	Bbsservice.java(I)
+         	BbsserviceImpl.java
+         	Boardservice.java(I)
+         	BoardserviceImpl.java
+         	Reboardservice.java(I)
+         	ReboardserviceImpl.java
+         	Memoservice.java(I)
+         	MemoserviceImpl.java
+         
+         - com.bit.board.common.dao
+         	CommonDao.java(I)
+         
+         - com.bit.board.common.service
+         	CommonService.java(I)
+         	CommonServiceImpl.java
+         
+         - com.bit.board.model
+         	AlbumDto.java
+         	BbsDto.java
+         	BoardDto.java
+         	ReboardDto.java
+         	MemoDto.java
+         
+         - com.bit.config.mybatis
+         
+         - com.bit.util   
+         	- PageNavigation.java
+     
+     - web
+         - css, img, js
+         - doc : 각종 문서(참고 문서)
+         -------------------JSP-----------------------
+         - common : public.jsp
+         - admin : 게시판 관리자
+             - boardmenu.jsp
+         - album : 사진게시판
+         - bbs : 자료실
+         - board : 공지사항, 한줄게시판, 일반게시판
+         - reboard : 답변게시판 (reply.jsp)
+         
+         - index.jsp

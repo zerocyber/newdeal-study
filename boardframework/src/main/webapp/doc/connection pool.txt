@@ -1,4 +1,4 @@
-tomcat 5.0 юлго ╧ЖюЭ
+tomcat 5.0 О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫
 
 <Resource name="jdbc/bbs" auth="Container" type="javax.sql.DataSource"/> 
    <ResourceParams name="jdbc/bbs">
@@ -41,7 +41,7 @@ tomcat 5.0 юлго ╧ЖюЭ
 
 
 
-tomcat 5.5юл╩С
+tomcat 5.5Л²╢Л┐│
 
 <Resource name="jdbc/bbs" auth="Container"
       type="javax.sql.DataSource"

@@ -1,15 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
-<%
-String root = request.getContextPath();
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ include file="/common/public.jsp"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="ko">
 <head>
-<title>±ÛÀÔ·Â ½ÇÆÐ</title>
+<title>ê¸€ìž…ë ¥ ì‹¤íŒ¨</title>
 
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
-<link rel="stylesheet" href="<%=root%>/css/skin_purple.css" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="${root}/css/skin_purple.css" type="text/css">
 </head>
 
 <body>
@@ -18,8 +16,8 @@ String root = request.getContextPath();
 	bgcolor="#ffffff" style="border: #e1e1e1 solid 1px">
 	<tr>
 		<td class="bg_board_title" width="100%"><img
-			src="<%=root%>/img/board/icon_arrow_08.gif" width="3" height="11"
-			border="0" align="absmiddle" hspace="6" vspace="6"> <b>°Ô½ÃÆÇ</b>
+			src="${root}/img/board/icon_arrow_08.gif" width="3" height="11"
+			border="0" align="absmiddle" hspace="6" vspace="6"> <b>ê²Œì‹œíŒ</b>
 		</td>
 	</tr>
 	<tr>
@@ -28,14 +26,14 @@ String root = request.getContextPath();
 	</tr>
 	<tr>
 		<td class="bg_menu" width="100%" style="padding: 25px" height="35"
-			align="center"><b>°Ô½Ã¹° µî·ÏÀÌ ½ÇÆÐ µÇ¾ú½À´Ï´Ù.</b><br>
+			align="center"><b>ê²Œì‹œë¬¼ ë“±ë¡ì´ ì‹¤íŒ¨ ë˜ì—ˆìŠµë‹ˆë‹¤.</b><br>
 		<br>
 
 		<div align="center"><a href=""><img
-			src="<%=root%>/img/board/btn_write_01.gif" width="91" height="21"
-			border="0" align="absmiddle" alt="´Ù½Ã ÀÛ¼º" hspace="10"></a><a href=""><img
-			src="<%=root%>/img/board/poll_listbu1.gif" width="62" height="21"
-			border="0" align="absmiddle" alt="¸ñ·Ïº¸±â" hspace="10"></a>
+			src="${root}/img/board/btn_write_01.gif" width="91" height="21"
+			border="0" align="absmiddle" alt="ë‹¤ì‹œ ìž‘ì„±" hspace="10"></a><a href=""><img
+			src="${root}/img/board/poll_listbu1.gif" width="62" height="21"
+			border="0" align="absmiddle" alt="ëª©ë¡ë³´ê¸°" hspace="10"></a>
 		</td>
 	</tr>
 </table>

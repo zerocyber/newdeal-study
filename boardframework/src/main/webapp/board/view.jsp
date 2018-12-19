@@ -1,24 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
-<%
-String root = request.getContextPath();
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ include file="/common/public.jsp"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="ko">
 <head>
-<title>±Ûº¸±â</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
-<link rel="stylesheet" href="<%=root%>/css/skin_purple.css" type="text/css">
+<title>ê¸€ë³´ê¸°</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="${root}/css/skin_purple.css" type="text/css">
 </head>
 
 <body>
 <!-- title -->
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
 	<tr>
-		<td><img src="<%=root%>/img/board/m_icon_board.gif" width="9"
+		<td><img src="${root}/img/board/m_icon_board.gif" width="9"
 			height="9" border="0" align="absmiddle" style="margin-top: -2px">
-		<b>ÀÚÀ¯°Ô½ÃÆÇ</b> &nbsp;<font style="font-size: 8pt">|</font>&nbsp; ÀÚÀ¯·Î¿î ±ÛÀ»
-		¿Ã¸®´Â °ø°£ÀÔ´Ï´Ù<br>
+		<b>ìžìœ ê²Œì‹œíŒ</b> &nbsp;<font style="font-size: 8pt">|</font>&nbsp; ìžìœ ë¡œìš´ ê¸€ì„
+		ì˜¬ë¦¬ëŠ” ê³µê°„ìž…ë‹ˆë‹¤<br>
 		</td>
 		<td align="right"></td>
 	</tr>
@@ -32,21 +30,21 @@ String root = request.getContextPath();
 		type="hidden" name="" value="">
 	<tr>
 		<td valign="bottom" nowrap><a href=""><img
-			src="<%=root%>/img/board/btn_write_01.gif" width="64" height="22"
-			border="0" align="absmiddle" alt="±Û¾²±â"></a> <a
+			src="${root}/img/board/btn_write_01.gif" width="64" height="22"
+			border="0" align="absmiddle" alt="ê¸€ì“°ê¸°"></a> <a
 			href="javascript:check_reply();"><img
-			src="<%=root%>/img/board/btn_reply.gif" width="40" height="22"
-			border="0" align="absmiddle" alt="´ä±Û"></a></td>
+			src="${root}/img/board/btn_reply.gif" width="40" height="22"
+			border="0" align="absmiddle" alt="ë‹µê¸€"></a></td>
 		<td valign="bottom" width="100%" style="padding-left: 4px"></td>
 		<td align="right" nowrap valign="bottom"><a
-			href="javascript:goPage(1);">ÃÖ½Å¸ñ·Ï</a> <font color="#c5c5c5">|</font>
-		<a href="javascript:goPage();">¸ñ·Ï</a> <font color="#c5c5c5">|</font>
+			href="javascript:goPage(1);">ìµœì‹ ëª©ë¡</a> <font color="#c5c5c5">|</font>
+		<a href="javascript:goPage();">ëª©ë¡</a> <font color="#c5c5c5">|</font>
 
 		<a href="javascript:goBbsRead();"><img
-			src="<%=root%>/img/board/icon_up.gif" border="0" align="absmiddle"
-			hspace="3">À­±Û</a> <font color="#c5c5c5">|</font> <a
-			href="javascript:goBbsRead();">¾Æ·§±Û<img
-			src="<%=root%>/img/board/icon_down.gif" border="0" align="absmiddle"
+			src="${root}/img/board/icon_up.gif" border="0" align="absmiddle"
+			hspace="3">ìœ—ê¸€</a> <font color="#c5c5c5">|</font> <a
+			href="javascript:goBbsRead();">ì•„ëž«ê¸€<img
+			src="${root}/img/board/icon_down.gif" border="0" align="absmiddle"
 			hspace="3"></a></td>
 	</tr>
 	<tr>
@@ -61,22 +59,22 @@ String root = request.getContextPath();
 	</tr>
 	<tr height="28">
 		<td class="bg_board_title" colspan="2" style="padding-left: 14px">
-		<b><font class="text"> Á¦¸ñÀ» Ãâ·Â ºÎºÐ </font></b></td>
+		<b><font class="text"> ì œëª©ì„ ì¶œë ¥ ë¶€ë¶„ </font></b></td>
 	</tr>
 	<tr>
 		<td class="bg_board_title_02" colspan="2" height="1"
 			style="overflow: hidden; padding: 0px"></td>
 	</tr>
 	<tr height="26">
-		<td width="100%" style="padding-left: 14px"><font class="stext">¹øÈ£
-		:</font> <font class="text_commentnum">±Û ¹øÈ£¸¦ Ãâ·Â ÇÏ´Â ºÎºÐ</font> &nbsp; <font
-			class="stext">±Û¾´ÀÌ :</font> <a href="javascript:;"
-			onClick="showSideView();" class="link_board_02">±Û¾´ÀÌ¸¦ Ãâ·Â ÇÏ´Â ºÎºÐ</a><br>
+		<td width="100%" style="padding-left: 14px"><font class="stext">ë²ˆí˜¸
+		:</font> <font class="text_commentnum">ê¸€ ë²ˆí˜¸ë¥¼ ì¶œë ¥ í•˜ëŠ” ë¶€ë¶„</font> &nbsp; <font
+			class="stext">ê¸€ì“´ì´ :</font> <a href="javascript:;"
+			onClick="showSideView();" class="link_board_02">ê¸€ì“´ì´ë¥¼ ì¶œë ¥ í•˜ëŠ” ë¶€ë¶„</a><br>
 		</td>
-		<td style="padding-right: 14px" nowrap class="stext">Á¶È¸ : <font
-			class="text_commentnum">Á¶È¸¼ö¸¦ Ãâ·Â ÇÏ´Â ºÎºÐ</font> &nbsp; ½ºÅ©·¦ : <font
-			class="text_commentnum">0</font> &nbsp; ³¯Â¥ : <font
-			class="text_commentnum">³¯Â¥ Ãâ·ÂÇÏ´Â ºÎºÐ</font></td>
+		<td style="padding-right: 14px" nowrap class="stext">ì¡°íšŒ : <font
+			class="text_commentnum">ì¡°íšŒìˆ˜ë¥¼ ì¶œë ¥ í•˜ëŠ” ë¶€ë¶„</font> &nbsp; ìŠ¤í¬ëž© : <font
+			class="text_commentnum">0</font> &nbsp; ë‚ ì§œ : <font
+			class="text_commentnum">ë‚ ì§œ ì¶œë ¥í•˜ëŠ” ë¶€ë¶„</font></td>
 	</tr>
 	<tr>
 		<td class="bg_board_title_02" colspan="2" height="1"
@@ -91,7 +89,7 @@ String root = request.getContextPath();
 
 
 
-		<P>±Û ³»¿ëÀÌ µé¾î ¿À´Â ºÎºÐ</P>
+		<P>ê¸€ ë‚´ìš©ì´ ë“¤ì–´ ì˜¤ëŠ” ë¶€ë¶„</P>
 
 
 
@@ -109,29 +107,29 @@ String root = request.getContextPath();
 	</tr>
 </table>
 
-<!-- ÇÏ´Ü ÆäÀÌÂ¡ -->
+<!-- í•˜ë‹¨ íŽ˜ì´ì§• -->
 <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	<tr>
 		<td colspan="3" height="5" style="padding: 0px"></td>
 	</tr>
 	<tr valign="top">
 		<td nowrap><a href=""><img
-			src="<%=root%>/img/board/btn_write_01.gif" width="64" height="22"
-			border="0" align="absmiddle" alt="±Û¾²±â"></a> <a
+			src="${root}/img/board/btn_write_01.gif" width="64" height="22"
+			border="0" align="absmiddle" alt="ê¸€ì“°ê¸°"></a> <a
 			href="javascript:check_reply();"><img
-			src="<%=root%>/img/board/btn_reply.gif" width="40" height="22"
-			border="0" align="absmiddle" alt="´ä±Û"></a></td>
+			src="${root}/img/board/btn_reply.gif" width="40" height="22"
+			border="0" align="absmiddle" alt="ë‹µê¸€"></a></td>
 		<td style="padding-left: 4px" width="100%"><a href=""
-			target="new"><img src="<%=root%>/img/board/btn_print.gif"
-			width="30" height="18" border="0" align="absmiddle" alt="ÀÎ¼â"></a></td>
+			target="new"><img src="${root}/img/board/btn_print.gif"
+			width="30" height="18" border="0" align="absmiddle" alt="ì¸ì‡„"></a></td>
 
-		<td align="right" nowrap><a href="javascript:goPage(1);">ÃÖ½Å¸ñ·Ï</a>
-		<font color="#c5c5c5">|</font> <a href="javascript:goPage();">¸ñ·Ï</a>
+		<td align="right" nowrap><a href="javascript:goPage(1);">ìµœì‹ ëª©ë¡</a>
+		<font color="#c5c5c5">|</font> <a href="javascript:goPage();">ëª©ë¡</a>
 		<font color="#c5c5c5">|</font> <a href="javascript:goBbsRead();"><img
-			src="<%=root%>/img/board/icon_up.gif" border="0" align="absmiddle"
-			hspace="3">À­±Û</a> <font color="#c5c5c5">|</font> <a
-			href="javascript:goBbsRead();">¾Æ·§±Û<img
-			src="<%=root%>/img/board/icon_down.gif" border="0" align="absmiddle"
+			src="${root}/img/board/icon_up.gif" border="0" align="absmiddle"
+			hspace="3">ìœ—ê¸€</a> <font color="#c5c5c5">|</font> <a
+			href="javascript:goBbsRead();">ì•„ëž«ê¸€<img
+			src="${root}/img/board/icon_down.gif" border="0" align="absmiddle"
 			hspace="3"></a></td>
 	</tr>
 </table>

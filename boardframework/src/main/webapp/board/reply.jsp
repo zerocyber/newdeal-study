@@ -1,24 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
-<%
-String root = request.getContextPath();
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ include file="/common/public.jsp"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="ko">
 <head>
-<title>°Ô½ÃÆÇ ±Û¾²±â</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
-<link rel="stylesheet" href="<%=root%>/css/skin_purple.css" type="text/css">
+<title>ê²Œì‹œíŒ ê¸€ì“°ê¸°</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="${root}/css/skin_purple.css" type="text/css">
 </head>
 
 <body>
 <!-- title -->
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
 	<tr>
-		<td><img src="<%=root%>/img/board/m_icon_board.gif" width="9"
+		<td><img src="${root}/img/board/m_icon_board.gif" width="9"
 			height="9" border="0" align="absmiddle" style="margin-top: -2px">
-		<b>ÀÚÀ¯°Ô½ÃÆÇ</b> &nbsp;<font style="font-size: 8pt">|</font>&nbsp; ÀÚÀ¯·Î¿î ±ÛÀ»
-		¿Ã¸®´Â °ø°£ÀÔ´Ï´Ù<br>
+		<b>ììœ ê²Œì‹œíŒ</b> &nbsp;<font style="font-size: 8pt">|</font>&nbsp; ììœ ë¡œìš´ ê¸€ì„
+		ì˜¬ë¦¬ëŠ” ê³µê°„ì…ë‹ˆë‹¤<br>
 		</td>
 		<td align="right"></td>
 	</tr>
@@ -29,9 +27,9 @@ String root = request.getContextPath();
 
 <table border="0" cellpadding="0" cellspacing="0" width="630">
 	<tr>
-		<td><img src="<%=root%>/img/board/icon_arrow_04.gif" width="4"
+		<td><img src="${root}/img/board/icon_arrow_04.gif" width="4"
 			height="11" border="0" align="absmiddle" vspace="4"></td>
-		<td width="100%" style="padding-left: 4px"><b>´ä±Û¾²±â</b></td>
+		<td width="100%" style="padding-left: 4px"><b>ë‹µê¸€ì“°ê¸°</b></td>
 	</tr>
 	<tr>
 		<td width="630" colspan="2" height="2" class="bg_board_title_02"></td>
@@ -50,19 +48,19 @@ String root = request.getContextPath();
 
 	<tr valign="top">
 		<td width="95" nowrap style="padding-left: 8px; padding-top: 10px"><img
-			src="<%=root%>/img/board/e_dot.gif" width="4" height="4" border="0"
-			align="absmiddle"> <b>Á¦¸ñ</b></td>
+			src="${root}/img/board/e_dot.gif" width="4" height="4" border="0"
+			align="absmiddle"> <b>ì œëª©</b></td>
 		<td colspan="5"><input name="subject" id="subject" type="text"
 			size="76" maxlength="150" class="inp_02" style="width: 300px"
-			value=""><img src="<%=root%>/img/board/i_info.gif" width="12"
+			value=""><img src="${root}/img/board/i_info.gif" width="12"
 			height="11" border="0" align="absmiddle" vspace="8"
-			style="margin: 3 3 0 6"><font class="stext">ÃÖ´ë ÇÑ±Û 75ÀÚ,
-		¿µ¹® 150ÀÚ</font><br>
+			style="margin: 3 3 0 6"><font class="stext">ìµœëŒ€ í•œê¸€ 75ì,
+		ì˜ë¬¸ 150ì</font><br>
 	</tr>
 	<tr>
 		<td width="620" nowrap style="padding-left: 8px; padding-top: 10px"
-			colspan="5"><img src="<%=root%>/img/board/e_dot.gif" width="4"
-			height="4" border="0" align="absmiddle"> <b>±Û³»¿ë</b> <textarea
+			colspan="5"><img src="${root}/img/board/e_dot.gif" width="4"
+			height="4" border="0" align="absmiddle"> <b>ê¸€ë‚´ìš©</b> <textarea
 			name="content" class="inp_02" cols="67" rows="25" scrollbars="no"></textarea>
 		</td>
 	</tr>
@@ -82,11 +80,11 @@ String root = request.getContextPath();
 	</tr>
 	<tr>
 		<td align="center"><a href="javascript:writeArticle();"><img
-			src="<%=root%>/img/board/btn_register.gif" width="42" height="21"
-			border="0" name="register" value="" alt="µî·Ï"></a> <a
+			src="${root}/img/board/btn_register.gif" width="42" height="21"
+			border="0" name="register" value="" alt="ë“±ë¡"></a> <a
 			href="javascript:history.back();"><img
-			src="<%=root%>/img/board/b_cancel.gif" width="42" height="21"
-			border="0" name="cencel" value="" alt="Ãë¼Ò"></a></td>
+			src="${root}/img/board/b_cancel.gif" width="42" height="21"
+			border="0" name="cencel" value="" alt="ì·¨ì†Œ"></a></td>
 	</tr>
 </table>
 </form>
