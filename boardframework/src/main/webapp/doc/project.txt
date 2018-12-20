@@ -4,7 +4,7 @@ pj : boardframework
          	BoardAdminController.java
          
          - com.bit.board.admin.dao
-         	BoardADminDao.java(I)
+         	BoardAdminDao.java(I)
          
          - com.bit.board.admin.service
          	BoardAdminService.java(I)
@@ -32,14 +32,14 @@ pj : boardframework
          - com.bit.board.service
             Albumservice.java(I)
             AlbumserviceImpl.java
-         	Bbsservice.java(I)
-         	BbsserviceImpl.java
-         	Boardservice.java(I)
-         	BoardserviceImpl.java
-         	Reboardservice.java(I)
-         	ReboardserviceImpl.java
-         	Memoservice.java(I)
-         	MemoserviceImpl.java
+         	BbsService.java(I)
+         	BbsServiceImpl.java
+         	BoardService.java(I)
+         	BoardServiceImpl.java
+         	ReboardService.java(I)
+         	ReboardServiceImpl.java
+         	MemoService.java(I)
+         	MemoServiceImpl.java
          
          - com.bit.board.common.dao
          	CommonDao.java(I)
