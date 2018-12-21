@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bit.board.common.dao.CommonDao;
+import com.bit.board.dao.ReboardDao;
 import com.bit.board.model.ReboardDto;
 
 @Service
@@ -19,7 +20,10 @@ public class ReboardServiceImpl implements ReboardService{
 	@Override
 	public int writeArticle(ReboardDto reboardDto) {
 		int seq = sqlSession.getMapper(CommonDao.class).getNextSeq();
-		return seq;
+		reboardDto.setSeq(seq);
+		reboardDto.setRef(seq);
+		int cnt = sqlSession.getMapper(ReboardDao.class).writeArticle(reboardDto);
+		return cnt != 0 ? seq : 0;
 	}
 
 	@Override
@@ -29,7 +33,7 @@ public class ReboardServiceImpl implements ReboardService{
 
 	@Override
 	public ReboardDto viewArticle(int seq) {
-		return null;
+		return sqlSession.getMapper(ReboardDao.class).viewArticle(seq);
 	}
 
 	@Override
