@@ -73,7 +73,7 @@
 		<td style="padding-right: 14px" nowrap class="stext">조회 : <font
 			class="text_commentnum">${article.hit}</font> &nbsp; 스크랩 : <font
 			class="text_commentnum">0</font> &nbsp; 날짜 : <font
-			class="text_commentnum">${article.longtime}</font></td>
+			class="text_commentnum">${article.logtime}</font></td>
 	</tr>
 	<tr>
 		<td class="bg_board_title_02" colspan="2" height="1"

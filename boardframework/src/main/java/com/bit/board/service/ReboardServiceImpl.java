@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.bit.board.common.dao.CommonDao;
 import com.bit.board.dao.ReboardDao;
 import com.bit.board.model.ReboardDto;
+import com.bit.util.BoardConstance;
 
 @Service
 public class ReboardServiceImpl implements ReboardService{
@@ -28,7 +29,13 @@ public class ReboardServiceImpl implements ReboardService{
 
 	@Override
 	public List<ReboardDto> listArticle(Map<String, String> param) {
-		return null;
+		int pg = Integer.parseInt(param.get("pg"));
+		int end = pg * BoardConstance.LIST_COUNT;
+		int start = end - BoardConstance.LIST_COUNT;
+		
+		param.put("start", start + ""); //문자열로 바꾸기 (toString같은 기능)
+		param.put("end", end + "");
+		return sqlSession.getMapper(ReboardDao.class).listArticle(param);
 	}
 
 	@Override

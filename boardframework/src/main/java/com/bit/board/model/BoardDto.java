@@ -9,7 +9,7 @@ public class BoardDto {
 	private String subject;
 	private String content;
 	private int hit;
-	private String longtime;
+	private String logtime;
 	private int bcode;
 
 	public int getSeq() {
@@ -68,12 +68,12 @@ public class BoardDto {
 		this.hit = hit;
 	}
 
-	public String getLongtime() {
-		return longtime;
+	public String getlogtime() {
+		return logtime;
 	}
 
-	public void setLongtime(String longtime) {
-		this.longtime = longtime;
+	public void setlogtime(String logtime) {
+		this.logtime = logtime;
 	}
 
 	public int getBcode() {

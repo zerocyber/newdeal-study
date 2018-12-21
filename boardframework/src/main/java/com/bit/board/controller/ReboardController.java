@@ -1,5 +1,6 @@
 package com.bit.board.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -10,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.bit.board.model.ReboardDto;
 import com.bit.board.service.ReboardService;
@@ -21,6 +23,18 @@ public class ReboardController {
 	
 	@Autowired
 	private ReboardService reboardService;
+	
+	@RequestMapping("list.bit")
+	public ModelAndView list(@RequestParam Map<String, String> param) {
+		
+		ModelAndView mav = new ModelAndView();
+		List<ReboardDto> list = reboardService.listArticle(param);
+		
+		mav.addObject("articlelist", list);
+		mav.setViewName("reboard/list");
+		
+		return mav;
+	}
 	
 	@RequestMapping(value="write.bit", method=RequestMethod.GET)
 	public String write(@RequestParam Map<String, String> param) {

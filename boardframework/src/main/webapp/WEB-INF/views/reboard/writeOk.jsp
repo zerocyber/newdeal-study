@@ -20,7 +20,7 @@ $(document).ready(function(){
 	});
 	
 	$("#listBtn").click(function(){
-		
+		$("#commonForm").attr("method","get").attr("action", listpath).submit();
 	});
 });
 </script>	
