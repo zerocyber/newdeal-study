@@ -93,7 +93,7 @@ $(document).ready(function(){
 			<!--td>
 	     
 	     </td-->
-			<td style="word-break: break-all;">${article.subject}&nbsp;&nbsp;&nbsp;</td>
+			<td style="word-break: break-all;"><c:out value="${article.subject}"></c:out>&nbsp;&nbsp;&nbsp;</td>
 			<td></td>
 			<td style="word-break: break-all;"><a href="javascript:;"
 				onClick="showSideView();" class="link_board_04">${article.name}</a></td>

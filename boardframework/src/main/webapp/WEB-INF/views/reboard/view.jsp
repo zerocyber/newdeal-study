@@ -85,7 +85,7 @@ $(document).ready(function(){
 	</tr>
 	<tr height="28">
 		<td class="bg_board_title" colspan="2" style="padding-left: 14px">
-		<b><font class="text"> ${article.subject} </font></b></td>
+		<b><font class="text"> <c:out value="${article.subject}"></c:out> </font></b></td>
 	</tr>
 	<tr>
 		<td class="bg_board_title_02" colspan="2" height="1"
