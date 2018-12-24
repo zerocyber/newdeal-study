@@ -1,4 +1,4 @@
-tomcat 5.0 ���� ����
+tomcat 5.0 이하 설정
 
 <Resource name="jdbc/bbs" auth="Container" type="javax.sql.DataSource"/> 
    <ResourceParams name="jdbc/bbs">
