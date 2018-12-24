@@ -10,8 +10,8 @@ public interface ReboardService {
 	int writeArticle(ReboardDto reboardDto);
 	List<ReboardDto> listArticle(Map<String, String> param); //page번호 등..
 	ReboardDto viewArticle(int seq);
+	ReboardDto getArticle(int seq);
 	int replyArticle(ReboardDto reboardDto);
-	
 	void modifyArticle(ReboardDto reboardDto);
 	void deleteArticle(int seq);
 	

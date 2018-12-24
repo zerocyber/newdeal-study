@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/public.jsp"%>
-
 <script type="text/javascript">
 function writeArticle(){
 	if(document.writeForm.subject.value == ""){
@@ -11,7 +10,7 @@ function writeArticle(){
 		alert("내용을 입력하세요");
 		return;
 	}else{
-		document.writeForm.action = "";
+		document.writeForm.action = "${root}/album/write.bit";
 		document.writeForm.submit();
 	}
 }
@@ -45,13 +44,13 @@ function writeArticle(){
 <br>
 
 <form id="writeForm" name="writeForm" method="post" action=""
-	style="margin: 0px">
+	style="margin: 0px" enctype="multipart/form-data"> <!-- entype을 지정해야 파일 업로드가 가능, 반드시 POST -->
 <div id="attach_file_hdn"></div>
 
-<input type="hidden" name="" value="">
-<input type="hidden" name="" value="">
-<input type="hidden" name="" value="">
-<input type="hidden" name="" value="">
+<input type="hidden" name="bcode" value="${bcode}">
+<input type="hidden" name="pg" value="1">
+<input type="hidden" name="key" value="">
+<input type="hidden" name="board" value="">
 
 <table border="0" cellpadding="5" cellspacing="0" width="630"
 	style="table-layout: fixed">
@@ -70,10 +69,23 @@ function writeArticle(){
 	<tr>
 		<td width="620" nowrap style="padding-left: 8px; padding-top: 10px"
 			colspan="5"><img src="${root}/img/board/e_dot.gif" width="4"
-			height="4" border="0" align="absmiddle"> <b>글내용</b> <textarea
+			height="4" border="0" align="absmiddle"> <b>글내용</b> 
+			<td colspan="5">
+			<textarea
 			name="content" class="inp_02" cols="67" rows="25" scrollbars="no"></textarea>
-		</td>
+			</td>
 	</tr>
+	
+		<tr>
+		<td width="620" nowrap style="padding-left: 8px; padding-top: 10px"
+			colspan="5"><img src="${root}/img/board/e_dot.gif" width="4"
+			height="4" border="0" align="absmiddle"> <b>사진</b> 
+			<td colspan="5">
+				<input type="file" name="picture" id="picture">
+			</td>
+	</tr>
+	
+	
 </table>
 <table width="630" cellpadding="0" cellspacing="0" border="0">
 	<tr>

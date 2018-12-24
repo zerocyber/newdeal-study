@@ -2,6 +2,23 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/public.jsp"%>
 
+
+<script type="text/javascript">
+function writeArticle(){
+	if(document.writeForm.subject.value == ""){
+		alert("제목을 입력하세요");
+		return;
+	}else if(document.writeForm.content.value == ""){
+		alert("내용을 입력하세요");
+		return;
+	}else{
+		document.writeForm.action = "${root}/reboard/reply.bit";
+		document.writeForm.submit();
+	}
+}
+
+</script>
+
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
 	<tr>
 		<td><img src="${root}/img/board/m_icon_board.gif" width="9"
@@ -32,7 +49,14 @@
 	style="margin: 0px">
 <div id="attach_file_hdn"></div>
 
-<input type="hidden" name="" value="">
+<input type="hidden" name="bcode" value="${bcode}">
+<input type="hidden" name="pg" value="${pg}">
+<input type="hidden" name="key" value="${key}">
+<input type="hidden" name="word" value="${word}">
+<input type="hidden" name="ref" value="${article.ref}">
+<input type="hidden" name="lev" value="${article.lev}">
+<input type="hidden" name="step" value="${article.step}">
+<input type="hidden" name="pseq" value="${article.seq}"> <!-- 원글의 글번호 -->
 
 <table border="0" cellpadding="5" cellspacing="0" width="630"
 	style="table-layout: fixed">
@@ -43,7 +67,7 @@
 			align="absmiddle"> <b>제목</b></td>
 		<td colspan="5"><input name="subject" id="subject" type="text"
 			size="76" maxlength="150" class="inp_02" style="width: 300px"
-			value=""><img src="${root}/img/board/i_info.gif" width="12"
+			value="RE : ${article.subject}"><img src="${root}/img/board/i_info.gif" width="12"
 			height="11" border="0" align="absmiddle" vspace="8"
 			style="margin: 3 3 0 6"><font class="stext">최대 한글 75자,
 		영문 150자</font><br>
@@ -51,8 +75,11 @@
 	<tr>
 		<td width="620" nowrap style="padding-left: 8px; padding-top: 10px"
 			colspan="5"><img src="${root}/img/board/e_dot.gif" width="4"
-			height="4" border="0" align="absmiddle"> <b>글내용</b> <textarea
-			name="content" class="inp_02" cols="67" rows="25" scrollbars="no"></textarea>
+			height="4" border="0" align="absmiddle"> <b>글내용</b> 
+			<textarea name="content" class="inp_02" cols="67" rows="25" scrollbars="no">
+			
+----------------------------------------------[이하 원글]
+${article.content}</textarea>
 		</td>
 	</tr>
 </table>

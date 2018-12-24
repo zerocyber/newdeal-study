@@ -21,6 +21,11 @@ $(document).ready(function(){
 		$("#commonForm").attr("method","get").attr("action", writepath).submit();
 	});
 	
+	$(".replyBtn").click(function(){
+		$("#seq").val("${article.seq}");
+		$("#commonForm").attr("method","get").attr("action", replypath).submit();
+	});
+	
 	$(".newpage").click(function(){
 		$("#pg").val(1);
 		$("#key").val("");
@@ -57,8 +62,8 @@ $(document).ready(function(){
 		<td valign="bottom" nowrap>
 			<img src="${root}/img/board/btn_write_01.gif" width="64" height="22" class="writeBtn"
 				border="0" align="absmiddle" alt="글쓰기">
-			<img src="${root}/img/board/btn_reply.gif" width="40" height="22"
-				border="0" align="absmiddle" alt="답글">		
+			<img src="${root}/img/board/btn_reply.gif" width="40" height="22" class="replyBtn"
+				border="0" align="absmiddle" alt="답글">
 		</td>
 		
 		<td valign="bottom" width="100%" style="padding-left: 4px"></td>
@@ -113,11 +118,7 @@ $(document).ready(function(){
 		<td bgcolor="#ffffff" width="100%" class="text"
 			style="padding-bottom: 8px; line-height: 1.3" id="clix_content">
 
-
-
 		<P>${article.content}</P>
-
-
 
 		</td>
 		<td nowrap valign="top" align="right" style="padding-left: 0px">
@@ -143,7 +144,7 @@ $(document).ready(function(){
 		<td nowrap>
 			<img src="${root}/img/board/btn_write_01.gif" width="64" height="22" class="writeBtn"
 				border="0" align="absmiddle" alt="글쓰기">
-			<img src="${root}/img/board/btn_reply.gif" width="40" height="22"
+			<img src="${root}/img/board/btn_reply.gif" width="40" height="22" class="replyBtn"
 				border="0" align="absmiddle" alt="답글">
 		</td>
 		

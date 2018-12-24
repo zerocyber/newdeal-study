@@ -125,7 +125,9 @@ $(document).ready(function(){
 				<!--td>
 		     
 		     </td-->
-				<td style="word-break: break-all;"><c:out value="${article.subject}"></c:out>&nbsp;&nbsp;&nbsp;</td>
+				<td style="word-break: break-all;">
+				<img src="${root}/img/board/blank.gif" width="${article.lev * 5}" height="1">
+				<span>${article.subject}&nbsp;&nbsp;&nbsp;</span></td>
 				<td></td>
 				<td style="word-break: break-all;"><a href="javascript:;"
 					onClick="showSideView();" class="link_board_04">${article.name}</a></td>
