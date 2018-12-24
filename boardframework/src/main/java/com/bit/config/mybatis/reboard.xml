@@ -36,6 +36,16 @@
 			from board b, reboard r
 			where b.seq = r.seq
 			and b.bcode = #{bcode}
+			<if test="word !=null and word != ''"> <!-- 검색이 null이 아니고 빈칸도 아닐 때 -->
+				<choose>
+					<when test="key == 'subject'">
+						and b.subject like '%'||#{word}||'%' <!-- PreparedStatement라서 ?가 들어가기 때문에 구분해서 더해준다 -->
+					</when>
+					<otherwise>
+						and b.${key} = #{word} <!-- "?":치환 변수는 값만 들어갈 수 있다. 직접 값을 넣는 방식의 Statement를 쓴다.($)-->
+					</otherwise>
+				</choose>
+			</if>
 			order by seq desc
 			) a
 		where rownum &lt;= #{end} 

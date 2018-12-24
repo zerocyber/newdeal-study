@@ -73,15 +73,15 @@ public class PageNavigation {
 		tmpNavigator.append(" <tr>\n");
 		if (this.isNowFirst()) {
 			tmpNavigator.append("  <td><font color='#999999'>\n<a href='javascript:goPage(1)'>");
-			tmpNavigator.append("   <img src='" + root + "/img/board/icon_prev02.gif' width='7' height='11' border='0' align='absmiddle' hspace='3'>ÃÖ½Å¸ñ·Ï</a>\n");
+			tmpNavigator.append("   <img src='" + root + "/img/board/icon_prev02.gif' width='7' height='11' border='0' align='absmiddle' hspace='3'>ìµœì‹ ëª©ë¡</a>\n");
 			tmpNavigator.append("   <img src='" + root + "/img/board/icon_prev01_dim.gif' width='3' height='11' border='0' align='absmiddle' hspace='3'>\n");
-			tmpNavigator.append("   ÀÌÀü</font>\n");
+			tmpNavigator.append("   ì´ì „</font>\n");
 		} else {
 			tmpNavigator.append("  <td>\n<a href='javascript:goPage(1)'>");
-			tmpNavigator.append("   <img src='" + root + "/img/board/icon_prev02.gif' width='7' height='11' border='0' align='absmiddle' hspace='3'>ÃÖ½Å¸ñ·Ï </a>\n");
-			tmpNavigator.append("   <a href='javascript:goPage(ÆäÀÌÁö°è»ê)'>");
+			tmpNavigator.append("   <img src='" + root + "/img/board/icon_prev02.gif' width='7' height='11' border='0' align='absmiddle' hspace='3'>ìµœì‹ ëª©ë¡ </a>\n");
+			tmpNavigator.append("   <a href='javascript:goPage(í˜ì´ì§€ê³„ì‚°)'>");
 			tmpNavigator.append("   <img src='" + root + "/img/board/icon_prev01_dim.gif' width='3' height='11' border='0' align='absmiddle' hspace='3'>\n");
-			tmpNavigator.append("   ÀÌÀü</a>");
+			tmpNavigator.append("   ì´ì „</a>");
 		}
 		tmpNavigator.append("  \n</td>\n");
 		tmpNavigator.append("  <td style='padding: 0 5 0 5'>\n");
@@ -112,16 +112,16 @@ public class PageNavigation {
 		tmpNavigator.append("  <td>\n");
 		
 		if (this.isNowEnd()) {
-			tmpNavigator.append("   <font color='#999999'>´ÙÀ½<img");
+			tmpNavigator.append("   <font color='#999999'>ë‹¤ìŒ<img");
 			tmpNavigator.append("   src='" + root + "/img/board/icon_next01_dim.gif' width='3' height='11'");
 			tmpNavigator.append(" border='0' align='absmiddle' hspace='3'> \n");
-			tmpNavigator.append("   ³¡¸ñ·Ï<img src='" + root + "/img/board/icon_next02_dim.gif' width='7' height='11'");
+			tmpNavigator.append("   ëëª©ë¡<img src='" + root + "/img/board/icon_next02_dim.gif' width='7' height='11'");
 			tmpNavigator.append(" border='0' align='absmiddle' hspace='3'></font>\n");
 		} else {
-			tmpNavigator.append("   <a href='javascript:goPage(ÆäÀÌÁö°è»ê)'>´ÙÀ½<img");
+			tmpNavigator.append("   <a href='javascript:goPage(í˜ì´ì§€ê³„ì‚°)'>ë‹¤ìŒ<img");
 			tmpNavigator.append(" src='" + root + "/img/board/icon_next01_dim.gif' width='3' height='11'");
 			tmpNavigator.append(" border='0' align='absmiddle' hspace='3'></a>\n");
-			tmpNavigator.append("   <a href='javascript:goPage(" + totalPageCount + ")'>³¡¸ñ·Ï<img src='" + root + "/img/board/icon_next02_dim.gif' width='7' height='11'");
+			tmpNavigator.append("   <a href='javascript:goPage(" + totalPageCount + ")'>ëëª©ë¡<img src='" + root + "/img/board/icon_next02_dim.gif' width='7' height='11'");
 			tmpNavigator.append(" border='0' align='absmiddle' hspace='3'>\n");
 		}
 
