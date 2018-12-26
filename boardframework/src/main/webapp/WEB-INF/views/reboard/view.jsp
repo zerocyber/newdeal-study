@@ -17,6 +17,8 @@ $(document).ready(function(){
 	
 	initVars();
 	
+	getMemoList();
+	
 	$(".writeBtn").click(function(){
 		$("#commonForm").attr("method","get").attr("action", writepath).submit();
 	});
@@ -36,6 +38,7 @@ $(document).ready(function(){
 	$(".mvpage").click(function(){
 		$("#commonForm").attr("method","get").attr("action", listpath).submit();
 	});
+
 	
 	// 댓글 관련
 	$("#memoBtn").click(function(){
@@ -57,22 +60,90 @@ $(document).ready(function(){
 		}
 	});
 	
+	$(document).on("click", ".viewMemoModifyBtn", function(){
+		var mseq = $(this).parent("td").attr("memo-mseq");
+		$("#div"+mseq).css("display", "");
+	});
+	
+	$(document).on("click", ".memoCancleBtn", function(){
+		var mseq = $(this).parents("td").attr("memo-mseq");
+		$("#div"+mseq).css("display", "none");
+	});
+	
+	$(document).on("click", ".memoModifyBtn", function(){
+		var mseq = $(this).parents("td").attr("memo-mseq");
+		$("#div"+mseq).css("display", "none");
+		var seq = "${article.seq}";
+		var mcontent = $("#mcontent"+mseq).val();
+		var parameter = JSON.stringify({'mseq' : mseq, 'seq' : seq, 'mcontent': mcontent});
+		
+		if(mcontent.trim().length != 0){
+			$.ajax({
+				url: '${root}/memo',
+				type: 'PUT',
+				contentType: 'application/json;charset:UTF-8',
+				dataType: 'json',
+				data : parameter,
+				success: function(data){
+					makeList(data);
+				}
+			});
+		}	
+	});
+	
+	$(document).on("click", ".memoDeleteBtn", function(){
+		if(confirm("정말 삭제하시겠습니까?")){			
+			var mseq = $(this).parent("td").attr("memo-mseq");
+			$.ajax({
+				url: '${root}/memo/${article.seq}/' + mseq,
+				type: 'DELETE',
+				contentType: 'application/json;charset:UTF-8',
+				dataType: 'json',
+				success: function(data){
+					makeList(data);
+				}
+			});
+		}
+	});
+	
+	function getMemoList(){
+		$.ajax({
+			url: '${root}/memo/${article.seq}',
+			type: 'GET',
+			contentType: 'application/json;charset:UTF-8',
+			dataType: 'json',
+			success: function(data){
+				makeList(data);
+			}
+		});
+	}
+	
 	function makeList(memos){
-		console.log(memos);
 		$("#memoview").empty();
 		var mlist = memos.memolist;
 		var output = '';
 		var len = mlist.length;
-		for(var i=0; i<len; i++){   // {$("tr").append($("td").attr("width", "150").attr("height","70"))....
+		
+		for(var i=0; i<len; i++){
 			output += '<tr>';
 			output += ' <td width="150" height="70">' + mlist[i].name + '</td>';
 			output += ' <td>' + mlist[i].mcontent + '</td>';
 			output += ' <td width="200">' + mlist[i].mtime + '</td>';
+			
 			if(mlist[i].id == '${userInfo.id}'){
-				output += '<td width="120">';
-				output += '<label>수정</label>';
-				output += '<label>삭제</label>';
+				output += '<td width="120" memo-mseq="'+ mlist[i].mseq+' ">';
+				output += '<label class="viewMemoModifyBtn">수정</label> | ';
+				output += '<label class="memoDeleteBtn">삭제</label>';
 				output += '</td>';
+				output += '</tr>';
+				output += '<tr>';
+				output += '  <td colspan="4" memo-mseq="'+ mlist[i].mseq+'">';
+				output += '  	<div id="div' + mlist[i].mseq + '" style="display: none;">';
+				output += '  		<textarea id="mcontent' + mlist[i].mseq + '" style="resize: none;" rows="3" cols="150">'+ mlist[i].mcontent +'</textarea>';
+				output += '  		<input type="button" class="memoModifyBtn" value="수정">';
+				output += '  		<input type="button" class="memoCancleBtn" value="취소">';
+				output += '  	</div>';
+				output += '  </td>';
 			}
 			output += '</tr>';
 			output += '<tr>';
@@ -81,6 +152,7 @@ $(document).ready(function(){
 			output += '</tr>';
 		}
 		$("#memoview").append(output);
+		
 	}
 	
 });
