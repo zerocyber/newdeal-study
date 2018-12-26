@@ -41,6 +41,7 @@ $(document).ready(function(){
 	$("#memoBtn").click(function(){
 		var seq = "${article.seq}";
 		var mcontent = $("#mcontent").val();
+		$("#mcontent").val("");
 		var parameter = JSON.stringify({'seq' : seq, 'mcontent' : mcontent});
 		if(mcontent.trim().length != 0){ //공백 제거한 댓글 내용이 0 이 아니면
 			$.ajax({
@@ -50,11 +51,37 @@ $(document).ready(function(){
 				dataType: 'json',
 				data : parameter,
 				success: function(data){
-					alert(data);
+					makeList(data);
 				}
 			});
 		}
 	});
+	
+	function makeList(memos){
+		console.log(memos);
+		$("#memoview").empty();
+		var mlist = memos.memolist;
+		var output = '';
+		var len = mlist.length;
+		for(var i=0; i<len; i++){   // {$("tr").append($("td").attr("width", "150").attr("height","70"))....
+			output += '<tr>';
+			output += ' <td width="150" height="70">' + mlist[i].name + '</td>';
+			output += ' <td>' + mlist[i].mcontent + '</td>';
+			output += ' <td width="200">' + mlist[i].mtime + '</td>';
+			if(mlist[i].id == '${userInfo.id}'){
+				output += '<td width="120">';
+				output += '<label>수정</label>';
+				output += '<label>삭제</label>';
+				output += '</td>';
+			}
+			output += '</tr>';
+			output += '<tr>';
+			output += '<td class="bg_board_title_02" height="1" colspan="11"';
+			output += '  style="overflow: hidden; padding: 0px"></td>';
+			output += '</tr>';
+		}
+		$("#memoview").append(output);
+	}
 	
 });
 </script>

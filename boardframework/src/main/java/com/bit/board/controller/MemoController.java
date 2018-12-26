@@ -29,7 +29,9 @@ public class MemoController {
 			int cnt = memoService.writeMemo(memoDto);
 		}
 		
-		return "";
+		String memolist = memoService.listMemo(memoDto.getSeq());
+		System.out.println(memolist);
+		return memolist;
 	}
 	
 }
