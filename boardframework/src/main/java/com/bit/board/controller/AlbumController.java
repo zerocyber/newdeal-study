@@ -100,10 +100,7 @@ public class AlbumController {
 				albumDto.setSaveFolder(saveFolder);
 			}
 			
-			
-			System.out.println("------------------------------");
 			int seq = albumService.writeArticle(albumDto);
-			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 			if(seq !=0) {
 				model.addAttribute("wseq", seq);
 			}else {

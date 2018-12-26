@@ -13,6 +13,8 @@ import com.bit.board.dao.ReboardDao;
 import com.bit.board.model.ReboardDto;
 import com.bit.util.BoardConstance;
 
+import jdk.nashorn.internal.objects.annotations.Setter;
+
 @Service
 public class ReboardServiceImpl implements ReboardService{
 

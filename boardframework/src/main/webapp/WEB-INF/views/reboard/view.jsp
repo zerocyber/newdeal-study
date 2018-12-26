@@ -37,6 +37,25 @@ $(document).ready(function(){
 		$("#commonForm").attr("method","get").attr("action", listpath).submit();
 	});
 	
+	// 댓글 관련
+	$("#memoBtn").click(function(){
+		var seq = "${article.seq}";
+		var mcontent = $("#mcontent").val();
+		var parameter = JSON.stringify({'seq' : seq, 'mcontent' : mcontent});
+		if(mcontent.trim().length != 0){ //공백 제거한 댓글 내용이 0 이 아니면
+			$.ajax({
+				url: '${root}/memo',
+				type: 'POST',
+				contentType: 'application/json;charset:UTF-8',
+				dataType: 'json',
+				data : parameter,
+				success: function(data){
+					alert(data);
+				}
+			});
+		}
+	});
+	
 });
 </script>
 <!-- title -->
@@ -58,12 +77,18 @@ $(document).ready(function(){
 	<form name="bbsForm" id="bbsbbs" method="post"><input
 		type="hidden" name="" value="">
 	<tr>
-	
 		<td valign="bottom" nowrap>
 			<img src="${root}/img/board/btn_write_01.gif" width="64" height="22" class="writeBtn"
 				border="0" align="absmiddle" alt="글쓰기">
 			<img src="${root}/img/board/btn_reply.gif" width="40" height="22" class="replyBtn"
 				border="0" align="absmiddle" alt="답글">
+				
+			<c:if test="${userInfo.id == article.id}">
+				<img src="${root}/img/board/btn_modify.gif" class="modifyBtn"
+					border="0" align="absmiddle" alt="수정">
+				<img src="${root}/img/board/btn_delete.gif" class="deleteBtn"
+					border="0" align="absmiddle" alt="삭제">
+			</c:if>
 		</td>
 		
 		<td valign="bottom" width="100%" style="padding-left: 4px"></td>
@@ -164,6 +189,18 @@ $(document).ready(function(){
 	</tr>
 </table>
 <br>
+
+<table cellpadding="5" cellspacing="5" border="0" width="100%" >
+<tr>
+	<td colspan="4">
+	<textarea id="mcontent" style="resize: none;" rows="3" cols="150" placeholder="댓글을 입력하세요"></textarea>
+	<input type="button" id="memoBtn" value="작성">
+	</td>
+</tr>
+
+<tbody id="memoview"></tbody>
+
+</table>
 </body>
 </html>
 </c:if>
