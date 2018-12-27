@@ -17,4 +17,7 @@ public interface ReboardDao {
 	
 	void modifyArticle(ReboardDto reboardDto);
 	void deleteArticle(int seq);
+	
+	
+	int idCheck(String mid);
 }

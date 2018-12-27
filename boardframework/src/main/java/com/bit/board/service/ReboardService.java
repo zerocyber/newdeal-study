@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.bit.board.model.ReboardDto;
+import com.bit.member.model.MemberDto;
 
 public interface ReboardService {
 
@@ -14,5 +15,7 @@ public interface ReboardService {
 	int replyArticle(ReboardDto reboardDto);
 	void modifyArticle(ReboardDto reboardDto);
 	void deleteArticle(int seq);
+	
+	int idCheck(String mid);
 	
 }

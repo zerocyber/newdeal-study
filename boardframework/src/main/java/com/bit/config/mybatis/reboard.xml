@@ -74,5 +74,11 @@
 		set reply = reply + 1 
 		where seq = #{pseq}
 	</update>
+	
+	
+	<select id="idCheck" resultType="int">
+	select count(*) from board_member
+	where mid= #{mid}
+	</select>
 
 </mapper>

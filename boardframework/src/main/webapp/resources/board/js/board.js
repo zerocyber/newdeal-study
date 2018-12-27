@@ -6,6 +6,7 @@ var writepath;
 var replypath;
 var modifypath;
 var deletepath;
+var signupPath;
 
 function initVars(){
 	listpath = control + "/list.bit";
@@ -14,4 +15,5 @@ function initVars(){
 	replypath = control + "/reply.bit";
 	modifypath = control + "/modify.bit";
 	deletepath = control + "/delete.bit";
+	signupPath = control + "/signUp.bit";
 }

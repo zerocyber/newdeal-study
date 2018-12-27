@@ -12,6 +12,10 @@ $(document).ready(function(){
 		$("#commonForm").attr("method","get").attr("action", writepath).submit();
 	});
 	
+	$(".signUp").click(function(){
+		$("#commonForm").attr("method","get").attr("action", signupPath).submit();
+	});
+	
 	
 	$(".posting").click(function(){
 		/* alert($(this).children().first().text()); */
@@ -79,6 +83,7 @@ $(document).ready(function(){
 		<td width="100%" style="padding-left: 6px" valign="bottom">새글 <b><font
 			class="text_acc_02">${navigator.newArticleCount}</font></b> / <font
 			class="text_acc_02">${navigator.totalArticleCount}</font></td>
+			<button class="signUp">회원가입</button>
 		<td width="300" nowrap>
 		<div align="right"></div>
 		</td>
